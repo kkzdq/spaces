@@ -1,15 +1,15 @@
-name: Build and Push QingLong Docker Image
+name: Build and Push MyJob Docker Image
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'QingLong/services.json'
-      - 'QingLong/notify.py'
-      - 'QingLong/front.conf'
-      - 'QingLong/docker-entrypoint.sh'
-      - 'QingLong/README.md'
-      - 'QingLong/Dockerfile'
+      - 'myjob/services.json'
+      - 'myjob/notify.py'
+      - 'myjob/front.conf'
+      - 'myjob/docker-entrypoint.sh'
+      - 'myjob/README.md'
+      - 'myjob/Dockerfile'
   workflow_dispatch:
 
 jobs:
@@ -41,13 +41,13 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./QingLong
+          context: ./myjob
           push: true
           tags: |
-            ghcr.io/${{ steps.lower-repo.outputs.repository }}/qinglong:latest
+            ghcr.io/${{ steps.lower-repo.outputs.repository }}/myjob:latest
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
-            org.opencontainers.image.description=QingLong Docker Image
+            org.opencontainers.image.description=MyJob Docker Image
             org.opencontainers.image.licenses=MIT
           cache-from: type=gha
           cache-to: type=gha,mode=max
