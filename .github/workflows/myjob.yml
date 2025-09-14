@@ -4,12 +4,12 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'myjob/services.json'
-      - 'myjob/notify.py'
-      - 'myjob/front.conf'
-      - 'myjob/docker-entrypoint.sh'
-      - 'myjob/README.md'
-      - 'myjob/Dockerfile'
+      - 'QingLong/services.json'
+      - 'QingLong/notify.py'
+      - 'QingLong/front.conf'
+      - 'QingLong/docker-entrypoint.sh'
+      - 'QingLong/README.md'
+      - 'QingLong/Dockerfile'
   workflow_dispatch:
 
 jobs:
